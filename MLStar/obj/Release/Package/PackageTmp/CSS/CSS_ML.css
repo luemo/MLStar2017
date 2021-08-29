@@ -1,0 +1,59 @@
+﻿body {
+}
+
+.mainframe{/*大框架的版型*/
+    color:black;
+    background: rgba(102%,204%,255%,0.5);
+    border-radius: 10px;
+}
+.btn_link{/*目錄連結*/
+    color:dodgerblue;
+    background: rgba(238%, 241%, 0%, 0.7);
+    border-radius: 10px;
+    text-decoration:none;
+}
+.title{/*目錄、子頁標題*/
+    color:black;
+    background: rgba(255%,0%,255%,0.3);
+    font-size:28px;
+    font-weight:bold;
+    border-radius: 10px;
+    text-decoration:none;
+}
+
+.titletxt{/*目錄、子頁標題文字*/
+    color:black;
+    font-size:28px;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+.content_title_photo{/*相片專用，相簿、相片標題*/
+    color:indigo;
+    text-decoration:none;
+    filter: drop-shadow(4px 4px 5px black);
+}
+.content_title{/*目錄內文連結文字，遊戲、小說、填詞*/
+    color:black;
+    font-size:16px;
+    font-weight:bold;
+    text-decoration:none;
+}
+.content_continue{/*雜筆專用，繼續閱讀的文字*/
+    color:purple;
+    font-size:15px;
+    text-decoration:none;
+}
+.content_time{/*雜筆專用，時間的文字*/
+    color:gray;
+    font-size:12px;
+    text-decoration:none;
+}
+.div_NextFile{/*分隔上下篇區塊-->頂部虛線*/
+    text-align:left;
+    border-top: black dashed 1px;
+}
+.content_NextFiletxt{/*上下篇的文字*/
+    color:dodgerblue;
+    text-decoration:none;
+}

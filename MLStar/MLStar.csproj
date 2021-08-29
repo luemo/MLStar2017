@@ -1,0 +1,446 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F471F828-1323-475D-BE5E-D77B0006408B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MLStar</RootNamespace>
+    <AssemblyName>MLStar</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="CSS\CSS_ML.css" />
+    <Content Include="Data\Game\00.寫在前面.html" />
+    <Content Include="Data\Game\01.[Allegro]FantasyInTheFall%28秋之狂響%29.html" />
+    <Content Include="Data\Game\01.[Allegro]FantasyInTheFall\01.jpg" />
+    <Content Include="Data\Game\01.[Allegro]FantasyInTheFall\02.jpg" />
+    <Content Include="Data\Game\01.[Allegro]FantasyInTheFall\03.jpg" />
+    <Content Include="Data\Game\01.[Allegro]FantasyInTheFall\04.jpg" />
+    <Content Include="Data\Game\01.[Allegro]FantasyInTheFall\05.jpg" />
+    <Content Include="Data\Game\01.[Allegro]FantasyInTheFall\06.jpg" />
+    <Content Include="Data\Game\02.[Allegro]NUK Game v1%28高大十九系擬人RPG%29.html" />
+    <Content Include="Data\Game\02.[Allegro]NUK_Game_v1\Battle.jpg" />
+    <Content Include="Data\Game\02.[Allegro]NUK_Game_v1\BiG_BOSS.jpg" />
+    <Content Include="Data\Game\02.[Allegro]NUK_Game_v1\EE_FACE.jpg" />
+    <Content Include="Data\Game\02.[Allegro]NUK_Game_v1\EE_Work.jpg" />
+    <Content Include="Data\Game\02.[Allegro]NUK_Game_v1\EndOfGame.jpg" />
+    <Content Include="Data\Game\02.[Allegro]NUK_Game_v1\Game_Over.jpg" />
+    <Content Include="Data\Game\02.[Allegro]NUK_Game_v1\Small_Boss.jpg" />
+    <Content Include="Data\Game\02.[Allegro]NUK_Game_v1\StartGame.jpg" />
+    <Content Include="Data\Game\02.[Allegro]NUK_Game_v1\System.jpg" />
+    <Content Include="Data\Game\02.[Allegro]NUK_Game_v1\Toilet.jpg" />
+    <Content Include="Data\Game\02.[Allegro]NUK_Game_v1\WL_FACE.jpg" />
+    <Content Include="Data\Game\02.[Allegro]NUK_Game_v1\WL_Work.jpg" />
+    <Content Include="Data\Game\02.[Allegro]NUK_Game_v1\Work.jpg" />
+    <Content Include="Data\Game\03.[Allegro]NUK Game v1%28盜墓私心版%29.html" />
+    <Content Include="Data\Game\03.[Allegro]NUK_Game_v1%28盜墓私心版%29\01.沒有人會發現.jpg" />
+    <Content Include="Data\Game\03.[Allegro]NUK_Game_v1%28盜墓私心版%29\02.沒有時間了.jpg" />
+    <Content Include="Data\Game\03.[Allegro]NUK_Game_v1%28盜墓私心版%29\03.帶我回家.jpg" />
+    <Content Include="Data\Game\03.[Allegro]NUK_Game_v1%28盜墓私心版%29\04.至少我會知道.jpg" />
+    <Content Include="Data\Game\03.[Allegro]NUK_Game_v1%28盜墓私心版%29\05.至少我會發現.jpg" />
+    <Content Include="Data\Game\03.[Allegro]NUK_Game_v1%28盜墓私心版%29\06.打死了，算我的.jpg" />
+    <Content Include="Data\Game\03.[Allegro]NUK_Game_v1%28盜墓私心版%29\07.打死了，算我的.jpg" />
+    <Content Include="Data\Game\03.[Allegro]NUK_Game_v1%28盜墓私心版%29\08.墨鏡.jpg" />
+    <Content Include="Data\Game\03.[Allegro]NUK_Game_v1%28盜墓私心版%29\09.墨鏡.jpg" />
+    <Content Include="Data\Game\03.[Allegro]NUK_Game_v1%28盜墓私心版%29\10.墨鏡.jpg" />
+    <Content Include="Data\Game\03.[Allegro]NUK_Game_v1%28盜墓私心版%29\11.墨鏡.jpg" />
+    <Content Include="Data\Game\03.[Allegro]NUK_Game_v1%28盜墓私心版%29\12.監護人.jpg" />
+    <Content Include="Data\Game\03.[Allegro]NUK_Game_v1%28盜墓私心版%29\13.張家古樓的大火.jpg" />
+    <Content Include="Data\Game\03.[Allegro]NUK_Game_v1%28盜墓私心版%29\14.我沒害死你.jpg" />
+    <Content Include="Data\Game\03.[Allegro]NUK_Game_v1%28盜墓私心版%29\15.呈堂共證.jpg" />
+    <Content Include="Data\Game\03.[Allegro]NUK_Game_v1%28盜墓私心版%29\16.真相永遠只有一個.jpg" />
+    <Content Include="Data\Game\03.[Allegro]NUK_Game_v1%28盜墓私心版%29\17.大俠請重新來過.jpg" />
+    <Content Include="Data\Game\04.[Allegro]NUK Game v2%28高大十九系擬人RPGv2版%29.html" />
+    <Content Include="Data\Game\04.[Allegro]NUK_Game_v2\01.專題海報發佈版.jpg" />
+    <Content Include="Data\Game\04.[Allegro]NUK_Game_v2\02.專案心智圖%28新%29.jpg" />
+    <Content Include="Data\Game\04.[Allegro]NUK_Game_v2\03.專案心智圖%28舊%29.jpg" />
+    <Content Include="Data\Game\04.[Allegro]NUK_Game_v2\04.BIGMAP.jpg" />
+    <Content Include="Data\Game\04.[Allegro]NUK_Game_v2\05.打狗小遊戲.jpg" />
+    <Content Include="Data\Game\04.[Allegro]NUK_Game_v2\06.走路.jpg" />
+    <Content Include="Data\Game\04.[Allegro]NUK_Game_v2\07.摘花小遊戲.jpg" />
+    <Content Include="Data\Game\04.[Allegro]NUK_Game_v2\08.對話.jpg" />
+    <Content Include="Data\Game\05.[Unity]InTheClouds.html" />
+    <Content Include="Data\Game\05.[Unity]InTheClouds\01.InTheCloud.png" />
+    <Content Include="Data\Game\05.[Unity]InTheClouds\02.Group.png" />
+    <Content Include="Data\Game\05.[Unity]InTheClouds\03.rule.png" />
+    <Content Include="Data\Game\05.[Unity]InTheClouds\04.Play.png" />
+    <Content Include="Data\Game\06.[RPGVX]我們未曾知曉童話的真相v1\01.Start.jpg" />
+    <Content Include="Data\Game\06.[RPGVX]我們未曾知曉童話的真相v1\02.SwanLake.jpg" />
+    <Content Include="Data\Game\06.[RPGVX]我們未曾知曉童話的真相_v1.html" />
+    <Content Include="Data\Lyrics\PIC\[盜筆禁婆]憶 原曲-JS-殺破狼.jpg" />
+    <Content Include="Data\Lyrics\[SD流花]櫻花樹.txt" />
+    <Content Include="Data\Lyrics\[TB]搭檔 - Bunny.txt" />
+    <Content Include="Data\Lyrics\[TB]搭檔 - Tiger.txt" />
+    <Content Include="Data\Lyrics\[三國丕雲]對立 原曲-太王四神記-Opening 序曲.txt" />
+    <Content Include="Data\Lyrics\[三國丕雲]憶子龍 原曲-溫崇正-明朝傳奇.txt" />
+    <Content Include="Data\Lyrics\[三國丕雲]搶 原曲-林海-踏古.txt" />
+    <Content Include="Data\Lyrics\[全職]做我網管好不好 原曲-徐譽滕-做我老婆好不好.txt" />
+    <Content Include="Data\Lyrics\[全職]榮耀依舊 原曲-音頻怪物-不要迷戀哥.txt" />
+    <Content Include="Data\Lyrics\[動畫]忘卻 原曲-LENA PARK-祈り～You Raise Me Up.txt" />
+    <Content Include="Data\Lyrics\[戰國信光]信念 原曲-兮悅-江山變.txt" />
+    <Content Include="Data\Lyrics\[有鬼孟婆]孟婆 原曲-林俊傑-江南.txt" />
+    <Content Include="Data\Lyrics\[歷史項虞]西楚霸王 原曲-狼毛-逐鹿.txt" />
+    <Content Include="Data\Lyrics\[特傳]夏冬 原曲-江蕙+阿杜-夢中的情話.txt" />
+    <Content Include="Data\Lyrics\[盜筆瓶邪]2015年的那場誓約 原曲-刀郎-2002年的第一場雪.txt" />
+    <Content Include="Data\Lyrics\[盜筆瓶邪]十年 原曲-劉德華+梁朝偉-無間道%28粵語版%29.txt" />
+    <Content Include="Data\Lyrics\[盜筆瓶邪]失落 原曲-胡彥斌-瀟湘雨.txt" />
+    <Content Include="Data\Lyrics\[盜筆瓶邪]小天真 原曲-筷子兄弟-小蘋果.txt" />
+    <Content Include="Data\Lyrics\[盜筆瓶邪]想你 原曲-羅志祥-搞笑.txt" />
+    <Content Include="Data\Lyrics\[盜筆瓶邪]承受 原曲-范逸臣-放生.txt" />
+    <Content Include="Data\Lyrics\[盜筆瓶邪]故往，十年後見 原曲-zhucool-紀年軒轅刺.txt" />
+    <Content Include="Data\Lyrics\[盜筆瓶邪]歸來 原曲-刀郎-披著羊皮的狼.txt" />
+    <Content Include="Data\Lyrics\[盜筆瓶邪]男人我來追 原曲-蘇慧倫-天下大亂%28「花木蘭」片頭曲%29.txt" />
+    <Content Include="Data\Lyrics\[盜筆瓶邪]等待 原曲-黃曉明-風聲.txt" />
+    <Content Include="Data\Lyrics\[盜筆瓶邪]許十年 原曲-費玉清+周杰倫-千里之外.txt" />
+    <Content Include="Data\Lyrics\[盜筆禁婆]憶.txt" />
+    <Content Include="Data\Lyrics\[絕代OL]刀劍決的姦情 原曲-董貞+小柯-風碑.txt" />
+    <Content Include="Data\Lyrics\[絕代OL]刀劍決的姦情%28惡搞版%29 原曲-董貞+小柯-風碑.txt" />
+    <Content Include="Data\Lyrics\[絕代OL]快意江湖 原曲-S.E.N.S-Missing You.txt" />
+    <Content Include="Data\Novel\01.吳小峰和鄭小軒-30題題目\2014.09.03. 20.貪戀的體溫.txt" />
+    <Content Include="Data\Novel\01.吳小峰和鄭小軒-30題題目\2014.09.03. 照相.txt" />
+    <Content Include="Data\Novel\01.吳小峰和鄭小軒-30題題目\2017.05.03. 特權.txt" />
+    <Content Include="Data\Novel\01.吳小峰和鄭小軒-30題題目\2017.05.04. 午飯.txt" />
+    <Content Include="Data\Novel\01.吳小峰和鄭小軒-30題題目\2017.05.06. 平底鍋.txt" />
+    <Content Include="Data\Novel\01.吳小峰和鄭小軒-30題題目\2017.05.10. 爭吵.txt" />
+    <Content Include="Data\Novel\01.吳小峰和鄭小軒-30題題目\2017.05.11. 外套.txt" />
+    <Content Include="Data\Novel\02.微小說%28雜%29\2009.11.25. 黃鶴樓驚魂.txt" />
+    <Content Include="Data\Novel\02.微小說%28雜%29\2013.01.17. 夢境，鵝黃的蛇.txt" />
+    <Content Include="Data\Novel\02.微小說%28雜%29\2013.03.22. 異類.txt" />
+    <Content Include="Data\Novel\02.微小說%28雜%29\2013.03.24. 報紙.txt" />
+    <Content Include="Data\Novel\02.微小說%28雜%29\2013.03.28. 歸.txt" />
+    <Content Include="Data\Novel\03.讀後感\2013.03.19. 江春入舊年 讀後感.txt" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\01.東北自拍第一張.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\02.東北堡.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\03.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\04.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\05.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\06.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\07.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\08.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\09.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\10.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\11.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\12.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\13.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\14.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\15.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\16.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\17.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\18.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\19.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\20.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\21.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\22.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\23.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\24.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\25.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\26.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\27.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\28.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\29.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\30.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\31.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\32.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\33.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\34.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\35.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\36.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\37.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\38.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\39.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\40.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\41.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\42.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\43.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\44.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\45.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\46.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\47.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\48.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\49.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\50.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\51.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\52.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\53.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\54.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\55.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\56.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\57.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\58.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\59.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\60.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\61.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\62.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\63.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\64.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\65.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\66.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\67.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\68.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\69.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\70.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\71.jpg" />
+    <Content Include="Data\Photo\2012.02.08. 東北雜談\album.jpg" />
+    <Content Include="Data\Photo\2012.02.11. 結婚花展\01.jpg" />
+    <Content Include="Data\Photo\2012.02.11. 結婚花展\02.jpg" />
+    <Content Include="Data\Photo\2012.02.11. 結婚花展\03.jpg" />
+    <Content Include="Data\Photo\2012.02.11. 結婚花展\04.jpg" />
+    <Content Include="Data\Photo\2012.02.11. 結婚花展\05.jpg" />
+    <Content Include="Data\Photo\2012.02.11. 結婚花展\06.jpg" />
+    <Content Include="Data\Photo\2012.02.11. 結婚花展\07.jpg" />
+    <Content Include="Data\Photo\2012.02.11. 結婚花展\08.jpg" />
+    <Content Include="Data\Photo\2012.02.11. 結婚花展\album.jpg" />
+    <Content Include="Data\Photo\2012.12.12. 泗水 雜記\01.jpg" />
+    <Content Include="Data\Photo\2012.12.12. 泗水 雜記\02.jpg" />
+    <Content Include="Data\Photo\2012.12.12. 泗水 雜記\album.jpg" />
+    <Content Include="Data\Photo\2013.02.20. 神木春，望鄉，那櫻花\01.jpg" />
+    <Content Include="Data\Photo\2013.02.20. 神木春，望鄉，那櫻花\02.jpg" />
+    <Content Include="Data\Photo\2013.02.20. 神木春，望鄉，那櫻花\03.jpg" />
+    <Content Include="Data\Photo\2013.02.20. 神木春，望鄉，那櫻花\04.jpg" />
+    <Content Include="Data\Photo\2013.02.20. 神木春，望鄉，那櫻花\05.jpg" />
+    <Content Include="Data\Photo\2013.02.20. 神木春，望鄉，那櫻花\06.jpg" />
+    <Content Include="Data\Photo\2013.02.20. 神木春，望鄉，那櫻花\07.jpg" />
+    <Content Include="Data\Photo\2013.02.20. 神木春，望鄉，那櫻花\08.jpg" />
+    <Content Include="Data\Photo\2013.02.20. 神木春，望鄉，那櫻花\09.jpg" />
+    <Content Include="Data\Photo\2013.02.20. 神木春，望鄉，那櫻花\10.jpg" />
+    <Content Include="Data\Photo\2013.02.20. 神木春，望鄉，那櫻花\11.jpg" />
+    <Content Include="Data\Photo\2013.02.20. 神木春，望鄉，那櫻花\album.jpg" />
+    <Content Include="Data\Photo\2013.02.21. 神木春，望鄉，那櫻花2\01.jpg" />
+    <Content Include="Data\Photo\2013.02.21. 神木春，望鄉，那櫻花2\02.jpg" />
+    <Content Include="Data\Photo\2013.02.21. 神木春，望鄉，那櫻花2\03.jpg" />
+    <Content Include="Data\Photo\2013.02.21. 神木春，望鄉，那櫻花2\04.jpg" />
+    <Content Include="Data\Photo\2013.02.21. 神木春，望鄉，那櫻花2\05.jpg" />
+    <Content Include="Data\Photo\2013.02.21. 神木春，望鄉，那櫻花2\06.jpg" />
+    <Content Include="Data\Photo\2013.02.21. 神木春，望鄉，那櫻花2\07.jpg" />
+    <Content Include="Data\Photo\2013.02.21. 神木春，望鄉，那櫻花2\08.jpg" />
+    <Content Include="Data\Photo\2013.02.21. 神木春，望鄉，那櫻花2\09.jpg" />
+    <Content Include="Data\Photo\2013.02.21. 神木春，望鄉，那櫻花2\10.jpg" />
+    <Content Include="Data\Photo\2013.02.21. 神木春，望鄉，那櫻花2\11.jpg" />
+    <Content Include="Data\Photo\2013.02.21. 神木春，望鄉，那櫻花2\album.jpg" />
+    <Content Include="Data\Writing\0000000000. 午夜喃呢.txt" />
+    <Content Include="Data\Writing\2018.02.22. 事務所建立的那些事.txt" />
+    <Content Include="Game.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Default.aspx" />
+    <Content Include="Lyrics.aspx" />
+    <Content Include="Novel.aspx" />
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Main.Master" />
+    <Content Include="Pic\background_H.jpg" />
+    <Content Include="Pic\background_M.jpg" />
+    <Content Include="Pic\PicUP.JPG" />
+    <Content Include="Writings.aspx" />
+    <Content Include="DataSys\ex_201802.log" />
+    <Content Include="DataSys\Visitor_201802.log" />
+    <None Include="Properties\PublishProfiles\test.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Photo.aspx" />
+    <Content Include="Pic\MLChou.jpg" />
+    <Content Include="scripts\ai.0.22.9-build00167.js" />
+    <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Fun.cs" />
+    <Compile Include="App_Code\Sys.cs" />
+    <Compile Include="Game.aspx.cs">
+      <DependentUpon>Game.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Game.aspx.designer.cs">
+      <DependentUpon>Game.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lyrics.aspx.cs">
+      <DependentUpon>Lyrics.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Lyrics.aspx.designer.cs">
+      <DependentUpon>Lyrics.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Main.Master.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main.Master.designer.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Novel.aspx.cs">
+      <DependentUpon>Novel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Novel.aspx.designer.cs">
+      <DependentUpon>Novel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Photo.aspx.cs">
+      <DependentUpon>Photo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Photo.aspx.designer.cs">
+      <DependentUpon>Photo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Writings.aspx.cs">
+      <DependentUpon>Writings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Writings.aspx.designer.cs">
+      <DependentUpon>Writings.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58656</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:58656/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>此專案參考這部電腦上所缺少的 NuGet 封裝。請啟用 NuGet 封裝還原，以下載該封裝。如需詳細資訊，請參閱 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的檔案是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,146 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="MLStar.Main" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link href="../CSS/CSS_ML.css" rel="stylesheet" type="text/css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script language="JavaScript" type="text/javascript">
+        function doMLoad()
+        {
+            doLoad();
+        }
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        #Div_Link{
+            color:black;
+            background: rgba(255%,102%,255%,0.7);
+            border-radius: 10px;
+            text-align:center;
+            height:85vh;
+            width:15vw;
+            position: fixed;
+            top: 7vh;
+            left:85%;
+        }
+        #Div_UP{
+            color:black;
+            background: rgb(152, 251, 152);
+            border-radius: 0px;
+            text-align: center;
+            height: 5vh;
+            width: 100%;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+        }
+        #Pic_UP{
+            height: 100%;
+            top: 0px;
+        }
+        #Div_DOWN{
+            color: black;
+            background: rgb(152, 251, 152);
+            border-radius: 0px;
+            text-align: center;
+            line-height: 5vh;
+            height: 5vh;
+            width: 100%;
+            position: fixed;
+            bottom: 65px;
+            left:0px;
+        }
+        #Div_BOTTOM{
+            color: black;
+            background: rgb(152, 251, 152);
+            border-radius: 0px;
+            text-align: center;
+            line-height: 65px;
+            height: 65px;
+            width: 100%;
+            position: fixed;
+            bottom: 0px;
+            left:0px;
+        }
+    </style>
+</head>
+<body style="background-image:url(/Pic/background_M.jpg);background-size:contain;vertical-align:middle" onload="doMLoad()">
+    <form id="form1" runat="server">
+        <div id="Div_Outline">
+            <table style="width: 100%">
+                <tr style="height:5vh">
+                    <td>
+                    </td>
+                    <td>
+                        <!-- 放上部的區塊 -->
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" >
+                        </asp:ContentPlaceHolder>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr id="frmMain" style="vertical-align:top;height:80vh" >
+                    <td style="width: 15%">
+                    </td>
+                    <td style="width: 70%">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server" >
+                        </asp:ContentPlaceHolder>
+                    </td>
+                    <td style="width: 15%">
+                    </td>
+                </tr>
+                <tr style="height:5vh">
+                    <td>
+                    </td>
+                    <td>
+                        <!-- 放底部的區塊 -->
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr style="height:65px">
+                    <td>
+                    </td>
+                    <td>
+                        <!-- 放廣告區塊 -->
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="Div_Link">
+            <table style="width:100%;height:100%;">
+                <tr>
+                    <td>
+                        <asp:HyperLink ID="LinkPhote" runat="server" NavigateUrl="~/Photo.aspx" CssClass="btn_link">攝‧影</asp:HyperLink><br /><br />
+                        <asp:HyperLink ID="LinkGame" runat="server" NavigateUrl="~/Game.aspx" CssClass="btn_link">遊戲製作</asp:HyperLink><br /><br />
+                        <asp:HyperLink ID="LinkNovel" runat="server" NavigateUrl="~/Novel.aspx" CssClass="btn_link">誰的故事</asp:HyperLink><br /><br />
+                        <asp:HyperLink ID="LinkLyrics" runat="server" NavigateUrl="~/Lyrics.aspx" CssClass="btn_link">一曲新詞唱舊愁</asp:HyperLink><br /><br />
+                        <asp:HyperLink ID="LinkWritings" runat="server" NavigateUrl="~/Writings.aspx" CssClass="btn_link">午夜呢喃</asp:HyperLink><br /><br />
+                        <asp:HyperLink ID="LinkAbout" runat="server" NavigateUrl="~/About.aspx" CssClass="btn_link">陌柳星事務所</asp:HyperLink><br /><br />
+                        <asp:HyperLink ID="LinkHome" runat="server" NavigateUrl="~/" CssClass="btn_link">首頁</asp:HyperLink><br /><br />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="Div_UP">
+            <!-- 上方圖片 -->
+            <img id="Pic_UP" src="Pic/PicUP.jpg"/>
+        </div>
+        
+        <div id="Div_DOWN">
+            <!-- 下方圖片 -->
+            &copy; 2018 陌柳星事務所 版權所有
+        </div>
+        <div id="Div_BOTTOM">
+            <!-- 最底下的遮照片 -->
+        </div>
+    </form>
+</body>
+</html>
